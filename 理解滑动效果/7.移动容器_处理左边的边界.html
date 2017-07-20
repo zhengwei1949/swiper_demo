@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        html,body {
+            width:100%;
+        }
+
+        #demo {
+            width: 800px;
+            height: 60px;
+            background: blue;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .wrapper{
+            width: 100%;
+            height: 60px;
+            overflow:hidden;
+            position: relative;
+        }
+        #demo li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            margin:10px;
+            background:gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul id="demo" class="clearfix">
+            <li>标题1</li>
+            <li>标题1</li>
+            <li>标题1</li>
+            <li>标题1</li>
+            <li>标题1</li>
+            <li>标题1</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var isDrag = false;
+            var initX = 0;
+            var oDemo = document.querySelector('#demo');
+            oDemo.addEventListener('touchstart', function (e) {
+                isDrag = true;
+                initX = e.touches[0].clientX;
+                var fn = function (e) {
+                    // console.log("移动");
+                    // console.log(e.touches[0].clientX);
+                    // console.log('============');
+                    if (isDrag === true) {
+                        console.log(oDemo.offsetLeft + (e.touches[0].clientX - initX) + 'px')
+                        oDemo.style.left = oDemo.offsetLeft + (e.touches[0].clientX - initX) + 'px';
+                        initX = e.touches[0].clientX;
+                    }
+                };
+                oDemo.addEventListener('touchmove',fn, false);
+                oDemo.addEventListener('touchend', function () {
+                    if(oDemo.offsetLeft > 0){
+                        oDemo.style.left = '0px';
+                    }
+                    isDrag = false;
+                    oDemo.removeEventListener('touchmove',fn);
+                },false);
+            }, false);
+        }, false);
+    </script>
+</body>
+
+</html>
