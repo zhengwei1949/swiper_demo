@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        body{
+            height:2000px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var initX = 0;
+            document.documentElement.addEventListener('touchstart',function(e){
+                // console.log("按下");
+                // console.log(e.touches[0].clientX);
+                // console.log('============');
+                initX = e.touches[0].clientX;
+            },false);
+            document.documentElement.addEventListener('touchmove',function(e){
+                // console.log("移动");
+                // console.log(e.touches[0].clientX);
+                // console.log('============');
+            },false);
+            document.documentElement.addEventListener('touchend',function(e){
+                // console.log("抬起");
+                // console.log(e.changedTouches[0].clientX);
+                // console.log('============');
+                if(initX > e.changedTouches[0].clientX){
+                    console.log('向左移动');
+                }else{
+                    console.log('向右移动');
+                }
+            },false);
+        },false);
+    </script>
+</body> 
+</html>
