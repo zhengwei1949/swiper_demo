@@ -11,19 +11,20 @@
             height:2000px;
         }
     </style>
+    <script src="./log.js"></script>
 </head>
 <body>
     <div id="demo"></div>
     <script>
         document.addEventListener('DOMContentLoaded',function(){
             document.documentElement.addEventListener('touchstart',function(){
-                console.log("按下");
+                myLog("按下");
             },false);
             document.documentElement.addEventListener('touchmove',function(){
-                console.log("移动");
+                myLog("移动");
             },false);
             document.documentElement.addEventListener('touchend',function(){
-                console.log("抬起");
+                myLog("抬起");
             },false);
         },false);
     </script>
