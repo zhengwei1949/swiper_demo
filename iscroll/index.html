@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>iScroll demo: carousel</title>
+
+<style type="text/css">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body, ul, li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+#viewport {
+	position: relative;
+	width: 320px;
+	height: 30px;
+	margin: 0 auto;
+	background: #fff;
+	overflow: hidden;
+}
+
+#wrapper {
+	width: 100%;
+	height: 30px;
+	margin: 0 auto;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 800px;
+	height: 30px;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background-color: #fff;
+}
+
+.slide {
+	width: 100px;
+	height: 30px;
+	float: left;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="viewport">
+	<div id="wrapper">
+		<div id="scroller">
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+			<div class="slide">
+				白菜价
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../build/iscroll.js"></script>
+<script>
+	myScroll = new IScroll('#wrapper', {
+		scrollX: true,
+		scrollY: false,
+		momentum: false,
+		snap: true,
+		snapSpeed: 400,
+		keyBindings: true
+	});
+</script>
+</body>
+</html>
